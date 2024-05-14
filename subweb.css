@@ -19,6 +19,12 @@ a{
     color: white;
 }
 
+.noto-serif-tc-regular {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
 .container span{
     background-color: transparent;
     color: white;
@@ -49,3 +55,4 @@ a{
     width: 100%;
     height: auto;
 }
+
