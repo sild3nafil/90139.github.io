@@ -4,7 +4,7 @@ var imgs = document.getElementsByClassName("imgstyle")
 var activeItem = null;
 var active = false;
 var index_now = -1;
-const xy = [0, 0], z = [5, 6, 7, 8];
+const xy = [0, 0], z = [5, 6, 7, 8, 9];
 
 /*for(i = 0; i < container.length; i++) {
     console.log(container[i]);
@@ -32,7 +32,7 @@ function loadData(){
     for(i = 0; i < cards.length; ++i){
         switch (i) {
             case 0:
-                cards[i].style.left = "10%";
+                cards[i].style.left = "90%";
                 cards[i].style.top =  "10%";
                 break;
             case 1:
@@ -46,6 +46,10 @@ function loadData(){
             case 3:
                 cards[i].style.left = "70%";
                 cards[i].style.top = "60%";
+                break;
+            case 4:
+                cards[i].style.left = "10%";
+                cards[i].style.top = "10%";
                 break;
             default:
                 console.log('Sorry');
@@ -92,6 +96,9 @@ function dragStart(e) {
                 case "four":
                     activeItem = e.currentTarget.children[3];
                     break;
+                case "five":
+                    activeItem = e.currentTarget.children[4];
+                    break;
             }
         }
 
@@ -107,7 +114,7 @@ function dragStart(e) {
             }
         }
         activeItem.style.border = "dashed white";
-        activeItem.style.zIndex = 8;
+        activeItem.style.zIndex = 9;
 
         if (activeItem !== null) {
             if (!activeItem.xOffset) {
