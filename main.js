@@ -2,7 +2,7 @@ var container = document.querySelectorAll("#container");
 var cards = document.getElementsByClassName("card");
 var imgs = document.getElementsByClassName("imgstyle")
 var activeItem = null;
-var active = false;
+var active = false, moved = false;
 var index_now = -1;
 const xy = [0, 0], z = [5, 6, 7, 8, 9];
 
@@ -24,6 +24,7 @@ container[0].addEventListener("touchmove", drag, false);
 container[0].addEventListener("mousedown", dragStart, false);
 container[0].addEventListener("mouseup", dragEnd, false);
 container[0].addEventListener("mousemove", drag, false);
+
 
 
 //console.log(container);
@@ -59,19 +60,20 @@ function loadData(){
     for(i = 0; i < cards.length; ++i){
         let XX = JSON.parse(localStorage.getItem("index" + i + "X")) + "px";
         let YY = JSON.parse(localStorage.getItem("index" + i + "Y")) + "px";
-        let ZZ = JSON.parse(localStorage.getItem("index" + i + "Z"));
+        //let ZZ = JSON.parse(localStorage.getItem("index" + i + "Z"));
         cards[i].style.left = XX;
         cards[i].style.top  = YY;
-        cards[i].style.zIndex = ZZ;
+        //cards[i].style.zIndex = ZZ;
     }
 }
 
 
 
 function dragStart(e) {
-    
     console.log(container);
     console.log("target:", e.target, "current: ", e.currentTarget);
+
+    moved = false;
     if (e.target !== e.currentTarget) {
         
         //console.log(e.currentTarget.children[0]);
@@ -153,14 +155,35 @@ function dragEnd(e) {
         }
         //xy[2] = JSON.stringify(activeItem.style.zIndex);
     }
-
+    if(moved){
+        console.log("moved");
+    }else{
+        console.log("not moved");
+        switch(index_now){
+            case 0:
+                window.location.href = "feeling.html";
+                break;
+            case 1:
+                window.location.href = "calculation.html";
+                break;
+            case 2:
+                window.location.href = "object.html";
+                break;
+            case 3:
+                window.location.href = "video.html";
+                break;
+            case 4:
+                window.location.href = "trashcan.html";
+                break;
+        }
+    }
     active = false;
     activeItem = null;
 }
 
 function drag(e) {
     //console.log(activeItem.offsetLeft);
-
+    moved = true;
     if (active) {
         e.preventDefault();
         //console.log(window.innerWidth, activeItem.offsetWidth);
@@ -195,10 +218,10 @@ function setTranslate(xPos, yPos, el) {
 function saveData(){
     localStorage.setItem("index" + index_now + "X", xy[0]);
     localStorage.setItem("index" + index_now + "Y", xy[1]);
-    for(i = 0; i < cards.length; ++i){
+    /*for(i = 0; i < cards.length; ++i){
         localStorage.setItem("index" + i + "Z", z[i]);
-    }
-    console.log(cards[0].style.zIndex);
+    }*/
+    //console.log(cards[0].style.zIndex);
     //localStorage.setItem("index" + index_now + "Z", xyz[2]);
     //localStorage.setItem(index_now, toBeSaved['StartY'])
 }
