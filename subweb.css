@@ -32,6 +32,20 @@ a{
     padding: 20px 25px;
 }
 
-/*.padleft{
-    padding-left: 20px;
-}*/
+.article{
+    display: block;
+    width: 90vW;
+
+    background-color: transparent;
+    color: white;
+    font-size: 13px;
+
+    padding: 0px 20px 0px 20px; 
+    /*text-align: center;*/
+}
+
+.article p{
+    word-wrap: break-word;
+    width: 100%;
+    height: auto;
+}
