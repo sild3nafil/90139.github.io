@@ -6,6 +6,7 @@
     <title>90139</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="subweb.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="popup.css">
     <link rel="icon" href="assets/trashcan.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,52 @@
         <span>January 15 2024</span>
     </div>
     <div class = "article">
-        <p>I might put some trash here.</p>
+        <p>Someone threw away some trash here.</p>
+            <!-- popup -->
+        <div class="popup">
+            <!-- top bar -->
+            <div class="top-bar">
+                <p class="image-name">img1.png</p>
+                <span class="close-btn"></span>
+            </div>
+            <!-- arrows -->
+            
+            <button class="arrow-btn left-arrow"><img src="img/arrow.png" alt=""></button>
+            <button class="arrow-btn right-arrow"><img src="img/arrow.png" alt=""></button>
+            
+            <!-- image -->
+            <img src="img/img1.png" class="large-image" alt="">
+            <!-- image-index -->
+            <h1 class="index"></h1>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-image">
+                <img src="assets/photo_icon.png" alt="" class="image">
+                <p>2D to 3D Transformation: Wassily Kandinsky - Thirty.png</p>
+            </div>
+            <div class="gallery-image">
+                <img src="assets/photo_icon.png" alt="" class="image">
+                <p>Body Observation: Groovy Bonsai Tree.png</p>
+            </div>
+            <div class="gallery-image">
+                <img src="assets/photo_icon.png" alt="" class="image">
+                <p>Furniture Observation: Refrigerator.png</p>
+            </div>
+            <div class="gallery-image">
+                <img src="assets/photo_icon.png" alt="" class="image">
+                <p>Polyhedron 40: Mushroom.png</p>
+            </div>
+            <div class="gallery-image">
+                <img src="assets/photo_icon.png" alt="" class="image">
+                <p>Construction Toy: MOSFETs.png</p>
+            </div>
+            <div class="gallery-image">
+                <img src="assets/photo_icon.png" alt="" class="image">
+                <p>Campus Proposal: Rotated Hexagon Dormitory Lounge.png</p>
+            </div>
+        </div>
     </div>
+    <script src="popup.js"></script>
 </body>
 </html>
