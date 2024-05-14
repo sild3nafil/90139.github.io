@@ -159,22 +159,24 @@ function dragEnd(e) {
         console.log("moved");
     }else{
         console.log("not moved");
-        switch(index_now){
-            case 0:
-                window.location.href = "feeling.html";
-                break;
-            case 1:
-                window.location.href = "calculation.html";
-                break;
-            case 2:
-                window.location.href = "object.html";
-                break;
-            case 3:
-                window.location.href = "video.html";
-                break;
-            case 4:
-                window.location.href = "trashcan.html";
-                break;
+        if(active){
+            switch(index_now){
+                case 0:
+                    window.location.href = "feeling.html";
+                    break;
+                case 1:
+                    window.location.href = "calculation.html";
+                    break;
+                case 2:
+                    window.location.href = "object.html";
+                    break;
+                case 3:
+                    window.location.href = "video.html";
+                    break;
+                case 4:
+                    window.location.href = "trashcan.html";
+                    break;
+            }
         }
     }
     active = false;
