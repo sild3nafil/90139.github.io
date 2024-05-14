@@ -103,6 +103,11 @@
     line-height: 50px;
     font-weight: 300;
 }
+.top-bar p{
+    position: absolute;
+    width: 90%;
+    top: 20px;
+}
 
 .image-name{
     opacity: 0;
