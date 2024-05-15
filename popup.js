@@ -41,6 +41,9 @@ const updateImage = (i) => {
         case 5:
             path1 = "Campus Proposal: Rotated Hexagon Dormitory Lounge.png";
             break;
+        case 6:
+            path1 = "qrcode.png";
+            break;
     }
     largeImage.src = path2;
     imageName.innerHTML = path1;
