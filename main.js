@@ -33,24 +33,24 @@ function loadData(){
     for(i = 0; i < cards.length; ++i){
         switch (i) {
             case 0:
-                cards[i].style.left = "90%";
-                cards[i].style.top =  "10%";
+                cards[i].style.left = "0 px";
+                cards[i].style.top =  "0 px";
                 break;
             case 1:
-                cards[i].style.left = "20%";
-                cards[i].style.top = "70%";
+                cards[i].style.left = "0 px";
+                cards[i].style.top = "90 px";
                 break;
             case 2:
-                cards[i].style.left = "50%";
-                cards[i].style.top = "30%";
+                cards[i].style.left = "90 px";
+                cards[i].style.top = "0 px";
                 break;
             case 3:
-                cards[i].style.left = "70%";
-                cards[i].style.top = "60%";
+                cards[i].style.left = "90 px";
+                cards[i].style.top = "90 px";
                 break;
             case 4:
-                cards[i].style.left = "10%";
-                cards[i].style.top = "10%";
+                cards[i].style.left = "0 px";
+                cards[i].style.top = "180 px";
                 break;
             default:
                 console.log('Sorry');
