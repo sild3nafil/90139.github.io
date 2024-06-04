@@ -41,7 +41,7 @@ function loadData(){
                 cards[i].style.top = "5%";
                 break;
             case 2:
-                cards[i].style.left = "40%";
+                cards[i].style.left = "35%";
                 cards[i].style.top = "5%";
                 break;
             case 3:
