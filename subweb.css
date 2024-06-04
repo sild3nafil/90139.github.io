@@ -62,7 +62,8 @@ a{
 }
 
 .mathfigure img{
-    height: 100px;
+    height: auto;
+    width: 30%;
 }
 
 .vvideo{
