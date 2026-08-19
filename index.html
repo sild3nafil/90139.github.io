@@ -1,58 +1,40 @@
-<!doctype html>
-<html lang="zh-Hant">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YUHAOCHI Portfolio</title>
-  <meta name="description" content="個人藝術作品集" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>90139</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="icon" href="assets/txt_icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <!--<a class="brand" href="index.html" aria-label="首頁">YUHAO CHI</a>-->
-    <a class="brand" href="index.html" aria-label="YUHAO CHI Home">
-      <img src="assets/logo.png" alt="YUHAO CHI">
-    </a>
-    <div class="menu-wrap">
-
-      <button class="menu-btn" id="menuBtn" aria-label="開啟選單" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="menu" id="menu">
-        <a href="index.html">Works</a>
-        <a href="#about">About</a>
-      </nav>
-
+    <div id="container">
+        <div class="card">
+            <img draggable="false" src="assets/file1.png" width = "64px" height = "64px" class="one"/>
+            <span class="one">intro</span>
+        </div>
+        <div class="card">
+            <img draggable="false" src="assets/file4.png" width = "64px" height = "64px" class="two"/>
+            <span class="two">note</span>
+        </div>
+        <div class="card">
+            <img draggable="false" src="assets/file3.png" width = "64px" height = "64px" class="three"/>
+            <span class="three">90139</span>
+        </div>
+        <div class="card">
+            <img draggable="false" src="assets/file2.png" width = "64px" height = "64px" class="four"/>
+            <span class="four">pic</span>
+        </div>
+        <div class="card">
+            <img draggable="false" src="assets/trashcan2.png" width = "64px" height = "64px" class="five"/>
+            <span class="five">trash can</span>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <section class="intro">
-      <p>SELECTED WORKS</p>
-      <h1>作品 / 練習 / 記錄</h1>
-    </section>
-
-    <section class="work-list" id="workList" aria-live="polite"></section>
-
-    <nav class="pagination" id="pagination" aria-label="作品頁碼"></nav>
-
-    <section class="about" id="about">
-      <div class="section-kicker">ABOUT</div>
-      <p>
-        開心就好。<br>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <span>© 2026 YUHAO CHI</span>
-    <span>Portfolio Archive</span>
-  </footer>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
 </body>
+<script src="main.js"></script>
 </html>
