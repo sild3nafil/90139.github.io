@@ -29,45 +29,20 @@ container[0].addEventListener("mousemove", drag, false);
 
 //console.log(container);
 loadData();
-function loadData(){
-    for(i = 0; i < cards.length; ++i){
-        switch (i) {
-            case 0:
-                cards[i].style.left = "5%";
-                cards[i].style.top =  "5%";
-                break;
-            case 1:
-                cards[i].style.left = "20%";
-                cards[i].style.top = "5%";
-                break;
-            case 2:
-                cards[i].style.left = "35%";
-                cards[i].style.top = "5%";
-                break;
-            case 3:
-                cards[i].style.left = "5%";
-                cards[i].style.top = "20%";
-                break;
-            case 4:
-                cards[i].style.left = "20%";
-                cards[i].style.top = "20%";
-                break;
-            default:
-                console.log('Sorry');
-        }
-    }
-    
-    for(i = 0; i < cards.length; ++i){
-        let XX = JSON.parse(localStorage.getItem("index" + i + "X")) + "px";
-        let YY = JSON.parse(localStorage.getItem("index" + i + "Y")) + "px";
-        //let ZZ = JSON.parse(localStorage.getItem("index" + i + "Z"));
-        cards[i].style.left = XX;
-        cards[i].style.top  = YY;
-        //cards[i].style.zIndex = ZZ;
-    }
+function loadData() {
+  const defaultPositions = [
+    ["5%", "5%"],
+    ["20%", "5%"],
+    ["35%", "5%"],
+    ["5%", "20%"],
+    ["20%", "20%"]
+  ];
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.left = defaultPositions[i][0];
+    cards[i].style.top = defaultPositions[i][1];
+  }
 }
-
-
 
 function dragStart(e) {
     console.log(container);
@@ -228,7 +203,7 @@ function saveData(){
     //localStorage.setItem(index_now, toBeSaved['StartY'])
 }
 
-setInterval(saveData, 250)
+//setInterval(saveData, 250)
 
 
 /*
