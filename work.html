@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YUHAOCHI Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body class="detail-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="YUHAO CHI Home">
+      <img src="assets/logo.png" alt="YUHAO CHI">
+    </a>
+    <a class="close-btn" id="closeBtn" href="index.html" aria-label="返回作品列表">×</a>
+  </header>
+
+  <main class="detail-shell">
+    <article id="detail"></article>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    /*const params = new URLSearchParams(location.search);
+    const id = Number(params.get("id"));
+    const work = WORKS.find(w => w.id === id) || WORKS[0];*/
+    const params = new URLSearchParams(location.search);
+
+    const id = Number(params.get("id"));
+    const page = Number(params.get("page")) || 1;
+
+    const work = WORKS.find(w => w.id === id) || WORKS[0];
+
+    const backUrl = `index.html?page=${page}`;
+
+    /* 右上角 X 回到原本頁數 */
+    document.getElementById("closeBtn").href = backUrl;
+
+    document.title = `${work.title} | Portfolio`;
+    const detail = document.getElementById("detail");
+
+    detail.innerHTML = `
+      <header class="detail-head">
+        <p class="detail-kicker">${work.category}</p>
+        <h1>${work.title}</h1>
+        <div class="meta">
+          <span>${work.date}</span>
+        </div>
+      </header>
+
+      <div class="detail-rule"></div>
+
+      <section class="detail-copy">
+        <p class="lead">${work.lead}</p>
+        ${work.description.map(p => `<p>${p}</p>`).join("")}
+      </section>
+
+      ${work.youtube ? `
+        <section class="detail-video">
+          <iframe
+            src="https://www.youtube.com/embed/${work.youtube}"
+            title="${work.title}"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </section>
+      ` : ""}
+
+      ${work.embedUrl ? `
+        <section class="detail-embed">
+          <iframe
+            src="${work.embedUrl}"
+            title="${work.title} interactive website"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </section>
+      ` : ""}
+
+      <section class="detail-gallery ${work.galleryLayout ? `${work.galleryLayout}-gallery` : ""}">
+        ${work.images.map((src, i) => `
+          <figure>
+            ${src.toLowerCase().endsWith(".mp4")
+              ? `
+                <video controls playsinline preload="metadata">
+                  <source src="${src}" type="video/mp4">
+                  Your browser does not support video playback.
+                </video>
+              `
+              : `
+                <img src="${src}" alt="${work.title} 圖片 ${i+1}" loading="lazy">
+              `
+            }
+          </figure>
+        `).join("")}
+      </section>
+
+      <nav class="detail-nav">
+        <a href="${backUrl}">← Back to works</a>
+      </nav>
+    `;
+  </script>
+</body>
+</html>
